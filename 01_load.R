@@ -14,25 +14,19 @@ require(gdata)
 require(reshape2)
 require(dplyr)
 
-RepoName<-'NatureServe_GBPU_Rank'
-CompDir<-'/Users/Morgan/Dropbox/'
-#CompDir<- '/Users/donmorgan/Dropbox (BVRC)/'#BVRC computer
-fileDir<-paste(CompDir,'_dev/',RepoName,'/',sep='')#on work computer
-OutDir<-paste(fileDir,'out/',sep='')
+OutDir<-('out/')
 figsOutDir<-paste(OutDir,'figures/',sep='')
 dataOutDir<-paste(OutDir,'data/',sep='')
 dir.create(file.path(OutDir), showWarnings = FALSE)
 dir.create(file.path(figsOutDir), showWarnings = FALSE)
 dir.create(file.path(dataOutDir), showWarnings = FALSE)
-DataDir <- paste(fileDir,"data/",sep='')
-
+DataDir <- ("data/")
 #Location of NatureServe Ranking spreadsheets
-RankBaseDir<-paste(CompDir,"Values/GBearsProv/GB_Management_Ranking/Ranking/Ranking2017/",sep='')
+RankBaseDir<-paste(DataDir,'RanksSep2017/',sep='')
 RegionDirs<- list.files(path=paste(RankBaseDir,sep=''), pattern='')
-setwd(OutDir)
 
 #Provincial GBear GIS and csv data
-GISdir <- paste(CompDir,"/Values/GBearsProv/GBAtlas/GISData/",sep='')
+GISdir <- paste(DataDir,"GISdir/",sep='')
 
 #Empty data.frames
 CFdf<-data.frame(GBPU=character(),Pop=character(),OverallThreat=character(),Isolation=character(),Trend=character(),AssignedRank=character())
