@@ -14,7 +14,7 @@ require(gdata)
 require(reshape2)
 require(dplyr)
 
-OutDir<-('out/')
+OutDir<-paste('out_',Sys.Date(),'/',sep='')
 figsOutDir<-paste(OutDir,'figures/',sep='')
 dataOutDir<-paste(OutDir,'data/',sep='')
 dir.create(file.path(OutDir), showWarnings = FALSE)
@@ -22,7 +22,7 @@ dir.create(file.path(figsOutDir), showWarnings = FALSE)
 dir.create(file.path(dataOutDir), showWarnings = FALSE)
 DataDir <- ("data/")
 #Location of NatureServe Ranking spreadsheets
-RankBaseDir<-paste(DataDir,'RanksSep2017/',sep='')
+RankBaseDir<-paste(DataDir,'Ranks/',sep='')
 RegionDirs<- list.files(path=paste(RankBaseDir,sep=''), pattern='')
 
 #Provincial GBear GIS and csv data
