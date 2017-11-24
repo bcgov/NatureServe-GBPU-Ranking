@@ -11,7 +11,7 @@
 # See the License for the specific language governing permissions and limitations under the License.
 
 
-#Make a shape file from Nature Serve Calculator data
+#Make a shape  file from Nature Serve Calculator data
 require(rgdal)
 require(gdata)
 require(reshape2)
