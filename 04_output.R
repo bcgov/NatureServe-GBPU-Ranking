@@ -46,4 +46,4 @@ plot(GBPU, col=colcode)
 legend("topright", legend=c("M1","M1M2","M2","M2M3","M3","M3M4","M4","M4M5","M5"), fill=c((names(plotclr))), cex=0.7, title="Grizzly Bear-Status") #bty="n", bg='white'',
 dev.off()
 
-writeOGR(GBPU, dsn=dataOutDir, layer = 'GBPUNSRank', driver="ESRI Shapefile")
+writeOGR(GBPU, dsn=dataOutDir, layer = 'GBPUNSRank', driver="ESRI Shapefile", overwrite_layer = 'TRUE')

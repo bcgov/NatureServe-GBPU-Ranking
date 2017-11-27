@@ -67,4 +67,6 @@ for (Reg in 1:length(RegionDirs)) {
 #Combine data from Population Esitmates, Calaculator Form and Threats Assessment data sets and write to directory
 GBPU_NatureServe<-merge(CFdf,TAdf) %>%  merge(ProvPop, by.x='GBPU', by.y='POPULATION', all=TRUE)
 
+GBPU_NatureServe$MRank<-gsub('R', 'M', GBPU_NatureServe$AssignedRank)
+
 write.csv(GBPU_NatureServe, file = paste(dataOutDir,"ProvGBPUs_NatServe.csv",sep=''), quote=TRUE)
